@@ -1,6 +1,4 @@
- : M)
-  // {
-  //   for_each(rw, rw + c, [](int x)
-  //            { cout << x << ", "; });
-  //   cout << endl;
-  // }
+
+  vector<int> b{2,5};
+
+  std::cout << lcs2(a, b) << std::endl;

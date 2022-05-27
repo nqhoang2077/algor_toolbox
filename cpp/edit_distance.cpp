@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <algorithm>
+#include <vector>
 
 using std::string;
 using namespace std;
@@ -15,21 +16,23 @@ int edit_distance(string str1, string str2)
 
   for (auto rc : M)
   {
-    for_each(rc, rc + c, [](int& x)
+    for_each(rc, rc + c, [](int &x)
              { x = 0; });
   }
 
-  for (int rc=0; rc<c; rc++)
+  for (int rc = 0; rc < c; rc++)
     M[0][rc] = rc;
-  for (int rr=0; rr<r; rr++)
+  for (int rr = 0; rr < r; rr++)
     M[rr][0] = rr;
 
-  for (int i=1; i<r; i++){
-    for (int j=1; j<c; j++){
+  for (int i = 1; i < r; i++)
+  {
+    for (int j = 1; j < c; j++)
+    {
       vector<int> compare{
-        M[i][j-1] + 1, // Delete
-        M[i-1][j] + 1, // Insert
-        M[i-1][j-1] + (str2[i]!=str1[j]) // Replace if unmatch, nothing if match
+          M[i][j - 1] + 1,                       // Delete
+          M[i - 1][j] + 1,                       // Insert
+          M[i - 1][j - 1] + (str2[i] != str1[j]) // Replace if unmatch, nothing if match
       };
       M[i][j] = *min_element(compare.begin(), compare.end());
     }
@@ -42,7 +45,7 @@ int edit_distance(string str1, string str2)
   //   cout << endl;
   // }
 
-  return M[r-1][c-1];
+  return M[r - 1][c - 1];
 }
 
 int main()
