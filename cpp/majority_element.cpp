@@ -5,17 +5,18 @@
 using std::vector;
 using namespace std;
 
-
 int get_majority_element(vector<int> &a, int left, int right)
 {
   sort(a.begin(), a.end());
-  int mid = a[(left+right)/2];
-  int count= 0;
-  for (auto i: a){
-    if (i==mid)
+  int mid = a[(left + right) / 2];
+  int count = 0;
+  for (auto i : a)
+  {
+    if (i == mid)
       count++;
   }
-  if (count > a.size()/2){
+  if (count > a.size() / 2)
+  {
     return mid;
   }
   return -1;
