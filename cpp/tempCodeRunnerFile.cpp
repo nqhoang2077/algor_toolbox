@@ -1,4 +1,5 @@
-
-  vector<int> b{2,5};
-
-  std::cout << lcs2(a, b) << std::endl;
+ << " -> " << r0 << " and " << l1 << " -> " << r1 << ", " << inv << endl;
+  // cout << "Left: ";
+  // print_vector(nums, l0, r0);
+  // cout << "Right: ";
+  // print_vector(nums, l1, r1);
