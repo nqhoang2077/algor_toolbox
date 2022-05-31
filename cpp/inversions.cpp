@@ -18,11 +18,6 @@ long long merge(vector<int> &nums, int l0, int r0, int l1, int r1)
   int N = r1 - l0 + 1, idx = 0;
   int result[N];
   int inv = 0;
-  // cout << "Merging " << l0 << " -> " << r0 << " and " << l1 << " -> " << r1 << ", " << inv << endl;
-  // cout << "Left: ";
-  // print_vector(nums, l0, r0);
-  // cout << "Right: ";
-  // print_vector(nums, l1, r1);
   while (l0 <= r0 or l1 <= r1)
   {
     int add = -1;
@@ -32,7 +27,6 @@ long long merge(vector<int> &nums, int l0, int r0, int l1, int r1)
       add = nums[l0++];
     else
     {
-      // cout << "Comparing " << nums[l0] << " and " << nums[l1] << "(l0,l1)="<< l0 << "," << l1 << endl;
       inv += (nums[l0] > nums[l1]) ? r0 - l0 + 1 : 0;
       add = (nums[l0] <= nums[l1]) ? nums[l0++] : nums[l1++];
     }
