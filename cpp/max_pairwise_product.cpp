@@ -2,6 +2,8 @@
 #include <vector>
 #include <algorithm>
 
+using namespace std;
+
 int MaxPairwiseProduct(const std::vector<int>& numbers) {
     int max_product = 0;
     int n = numbers.size();

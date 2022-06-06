@@ -1,5 +1,11 @@
- << " -> " << r0 << " and " << l1 << " -> " << r1 << ", " << inv << endl;
-  // cout << "Left: ";
-  // print_vector(nums, l0, r0);
-  // cout << "Right: ";
-  // print_vector(nums, l1, r1);
+ut << "Max: " << endl;
+  for (int i = 0; i < N; i++)
+  {
+    print_vector(Max[i]);
+  }
+  cout << "Min: " << endl;
+
+  for (int i = 0; i < N; i++)
+  {
+    print_vector(Min[i]);
+  }
